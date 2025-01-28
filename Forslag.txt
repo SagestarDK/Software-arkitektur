@@ -1,0 +1,45 @@
+
+Her er et forslag til klassestruktur til opgaven:
+
+1. Abstract Base Class:
+Navn: AbstractQueue
+Skal være en abstrakt klasse (f.eks. med virtual metoder).
+Skal indeholde følgende metoder:
+enqueue(int value) – Tilføjer et element til køen.
+dequeue() – Fjerner og returnerer det første element i køen.
+empty() – Returnerer true, hvis køen er tom.
+full() – Returnerer true, hvis køen er fuld.
+cpp
+Kopiér
+Rediger
+class AbstractQueue {
+public:
+    virtual void enqueue(int value) = 0; // Pure virtual
+    virtual int dequeue() = 0;          // Pure virtual
+    virtual bool empty() const = 0;     // Pure virtual
+    virtual bool full() const = 0;      // Pure virtual
+    virtual ~AbstractQueue() = default; // Virtuel destruktor
+};
+2. Implementering med Array:
+Navn: ArrayQueue
+Skal nedarve fra AbstractQueue.
+Brug et array som intern datastruktur til at holde integer-værdier.
+Tilføj private medlemsvariable til at spore:
+Arraystørrelse (f.eks. const int size).
+Indeks for for- og bagenden af køen (f.eks. front og rear).
+Antallet af elementer i køen.
+3. Implementering med Liste:
+Navn: ListQueue
+Skal nedarve fra AbstractQueue.
+Brug en linked list som intern datastruktur til at holde integer-værdier.
+Implementer en simpel Node-struktur (med int data og en pointer til næste node).
+Sørg for at holde styr på:
+En head- og tail-pointer til listen.
+Denne struktur sikrer, at du følger god objektorienteret praksis og opfylder opgavens krav om brug af abstrakt klasse og specifikke datastrukturer.
+
+
+
+
+
+
+
